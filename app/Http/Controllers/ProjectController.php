@@ -63,7 +63,7 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        return view('/projects/create', [ 'project' => $project ]);
+        return view('/projects/edit', [ 'project' => $project ]);
     }
 
     /**
@@ -75,7 +75,11 @@ class ProjectController extends Controller
      */
     public function update(Request $request, Project $project)
     {
-        //
+        $project->name = $request->name;
+        $project->code = $request->code;
+        $project->description = $request->description;
+        $project->save();
+        $this->index();
     }
 
     /**
