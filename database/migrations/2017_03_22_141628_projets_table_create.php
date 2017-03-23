@@ -18,6 +18,7 @@ class ProjetsTableCreate extends Migration
             $table->string('name');
             $table->text('description')->nullable();
             $table->string('code');
+            $table->string('color', 10);
             $table->timestamps();
         });
     }
