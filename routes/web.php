@@ -20,3 +20,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 Route::resource('projects', 'ProjectController');
+
+Route::resource('stories', 'StoryController');

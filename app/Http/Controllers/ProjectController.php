@@ -47,11 +47,13 @@ class ProjectController extends Controller
     /**
      * Display the specified resource.
      *
+     * @param \Illuminate\Http\Request
      * @param  \App\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function show(Project $project)
+    public function show(Request $request, Project $project)
     {
+        $request->session()->put('project_id', $project->id);
         return view('/projects/show', [ 'project' => $project ]);
     }
 
