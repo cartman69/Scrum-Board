@@ -52,7 +52,7 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-        //
+        return view('/projects/show', [ 'project' => $project ]);
     }
 
     /**
@@ -79,7 +79,7 @@ class ProjectController extends Controller
         $project->code = $request->code;
         $project->description = $request->description;
         $project->save();
-        $this->index();
+        return $this->index();
     }
 
     /**
